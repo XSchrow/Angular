@@ -20,9 +20,11 @@ import { SidebarComponent } from './include/sidebar/sidebar.component';
 import { UsersComponent } from './users/users.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
+import { PageConnexionComponent } from './connexion/connexion.component';
 
 const COMPONENTS = [
   PagesComponent,
+  PageConnexionComponent,
   PageOverviewComponent,
   PageCrudComponent,
   PageSettingsComponent,

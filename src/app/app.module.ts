@@ -6,10 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { PagesModule } from './pages/pages.module';
 
 import { AppComponent } from './app.component';
+import { ExplorateurFormComponent } from './explorateur-form/explorateur-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ExplorateurFormComponent,
   ],
   imports: [
     BrowserModule,
