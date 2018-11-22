@@ -12,7 +12,7 @@ import { PageOverviewComponent } from './overview/overview.component';
 import { PageCrudComponent } from './crud/crud.component';
 import { PageSettingsComponent } from './settings/settings.component';
 import { PageConnexionComponent } from './connexion/connexion.component';
-import { PageExplorateurFormComponent } from './explorateur-form/explorateur-form.component';
+import { ExplorateursComponent } from './explorateurs/explorateurs.component';
 
 
 import { LayoutDefaultComponent } from './layouts/default/default.component';
@@ -26,6 +26,7 @@ import { ProfileFormComponent } from './profile-form/profile-form.component';
 
 const COMPONENTS = [
   PagesComponent,
+  ExplorateursComponent,
   PageConnexionComponent,
   PageOverviewComponent,
   PageCrudComponent,

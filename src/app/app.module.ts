@@ -8,13 +8,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { PagesModule } from './pages/pages.module';
 
 import { AppComponent } from './app.component';
-import { PageExplorateurFormComponent } from './pages/explorateur-form/explorateur-form.component';
+import { ExplorateursComponent } from './pages/explorateurs/explorateurs.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageExplorateurFormComponent
+    ExplorateursComponent
   ],
   imports: [
     BrowserModule,
