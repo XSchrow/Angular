@@ -1,16 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { Explorateur } from '../../Explorateur'
 
 @Component({
   selector: 'app-explorateur-form',
   templateUrl: './explorateur-form.component.html',
-  styleUrls: ['./explorateur-form.component.css']
+  styleUrls: ['./explorateur-form.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
-export class ExplorateurFormComponent implements OnInit {
+export class PageExplorateurFormComponent implements AfterViewInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    const parent = (window.parent as any);
+    if (parent.setDemoFrameHeight) {
+      parent.setDemoFrameHeight();
+    }
   }
   submitted = false;
 

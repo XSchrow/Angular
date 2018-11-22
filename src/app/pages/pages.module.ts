@@ -11,6 +11,9 @@ import { PagesComponent } from './pages.component';
 import { PageOverviewComponent } from './overview/overview.component';
 import { PageCrudComponent } from './crud/crud.component';
 import { PageSettingsComponent } from './settings/settings.component';
+import { PageConnexionComponent } from './connexion/connexion.component';
+import { PageExplorateurFormComponent } from './explorateur-form/explorateur-form.component';
+
 
 import { LayoutDefaultComponent } from './layouts/default/default.component';
 
@@ -20,7 +23,6 @@ import { SidebarComponent } from './include/sidebar/sidebar.component';
 import { UsersComponent } from './users/users.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
-import { PageConnexionComponent } from './connexion/connexion.component';
 
 const COMPONENTS = [
   PagesComponent,
