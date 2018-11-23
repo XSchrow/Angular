@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Explorateur } from '../../models/explorateur';
-import { ExplorateurService } from '../../services/explorateur.service'
+import { Explorateur } from '../../models/explorateur'
+import { ExplorateurService } from '../../services/explorateur/explorateur.service'
 
 
 @Component({
@@ -16,11 +16,11 @@ export class ExplorateursComponent implements OnInit {
     
   }
   
-  add(name:string, email:string) : void {
-    name = name.trim();
+  add(username:string, email:string) : void {
+    username = username.trim();
     email = email.trim();
     if(!name && !email) {return;}
-    this.explorateurService.addExplorateur({name, email} as Explorateur)
+    this.explorateurService.addExplorateur({username, email} as Explorateur)
       .subscribe(explorateur => {
         this.explorateurs.push(explorateur);
       });

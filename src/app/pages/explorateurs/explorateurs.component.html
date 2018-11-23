@@ -4,7 +4,7 @@
 </div>
 <div>
   <label>Name:
-    <input #explorateurName type="text"/>
+    <input #explorateurUsername type="text"/>
   </label>
   <br>
   <label>Email:
@@ -15,7 +15,7 @@
     <input #explorateurPassword type="password"/>
   </label>
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(explorateurName.value, explorateurEmail.value); explorateurName.value=''">
+  <button (click)="add(explorateurUsername.value, explorateurEmail.value);">
     Inscription
   </button>
 </div>

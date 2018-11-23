@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Explorateur } from '../../models/explorateur';
-import { ExplorateurService } from '../../services/explorateur.service'
+import { ExplorateurService } from '../../services/explorateur/explorateur.service'
 
 
 @Component({
-  selector: 'app-explorateurs',
-  templateUrl: './explorateurs.component.html',
-  styleUrls: ['./explorateurs.component.css']
+  selector: 'app-connexion',
+  templateUrl: './connexion.component.html',
+  styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
   constructor(private explorateurService: ExplorateurService) { }
@@ -15,10 +15,10 @@ export class ConnexionComponent implements OnInit {
     
   }
 
-  find(name:string, password:string) : void {
-    name = name.trim();
+  find(username:string, password:string) : void {
+    username = username.trim();
     password = password.trim();
     if(!name && !password) {return;}
-    this.explorateurService.findExplorateur({name, password} as Explorateur)
+    this.explorateurService.findExplorateur({username, password} as Explorateur)
   }
 }
