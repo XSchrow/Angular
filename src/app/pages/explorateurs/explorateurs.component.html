@@ -1,5 +1,21 @@
+<h1>Inscription</h1>
 <div>
-  <label>name:
-    <input [(ngModel)]="explorateur.name" placeholder="name">
+  <p>Bienvenue cher citoyen d'Andromia! Veuillez vous incrire afin de devenir un jeune explorateur d'Andromia.</p>
+</div>
+<div>
+  <label>Name:
+    <input #explorateurName type="text"/>
   </label>
+  <br>
+  <label>Email:
+    <input #explorateurEmail type="email"/>
+  </label>
+  <br>
+  <label>Password:
+    <input #explorateurPassword type="password"/>
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(explorateurName.value, explorateurEmail.value); explorateurName.value=''">
+    Inscription
+  </button>
 </div>

@@ -8,13 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { PagesModule } from './pages/pages.module';
 
 import { AppComponent } from './app.component';
-import { ExplorateursComponent } from './pages/explorateurs/explorateurs.component'
+//import { ExplorateursComponent } from './pages/explorateurs/explorateurs.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExplorateursComponent
   ],
   imports: [
     BrowserModule,

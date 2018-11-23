@@ -1,20 +1,24 @@
-import { Component, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Explorateur } from '../../models/explorateur';
+import { ExplorateurService } from '../../services/explorateur.service'
+
 
 @Component({
-  selector: 'app-connexion',
-  templateUrl: './connexion.component.html',
-  styleUrls: ['./connexion.component.css'],
-  encapsulation: ViewEncapsulation.None
+  selector: 'app-explorateurs',
+  templateUrl: './explorateurs.component.html',
+  styleUrls: ['./explorateurs.component.css']
 })
-export class PageConnexionComponent implements AfterViewInit {
+export class ConnexionComponent implements OnInit {
+  constructor(private explorateurService: ExplorateurService) { }
 
-  constructor() { }
-
-  ngAfterViewInit() {
-    const parent = (window.parent as any);
-    if (parent.setDemoFrameHeight) {
-      parent.setDemoFrameHeight();
-    }
+  ngOnInit() {
+    
   }
 
+  find(name:string, password:string) : void {
+    name = name.trim();
+    password = password.trim();
+    if(!name && !password) {return;}
+    this.explorateurService.findExplorateur({name, password} as Explorateur)
+  }
 }

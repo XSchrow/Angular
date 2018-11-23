@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Explorateur } from '../../models/explorateur';
+import { ExplorateurService } from '../../services/explorateur.service'
+
 
 @Component({
   selector: 'app-explorateurs',
@@ -7,11 +9,21 @@ import { Explorateur } from '../../models/explorateur';
   styleUrls: ['./explorateurs.component.css']
 })
 export class ExplorateursComponent implements OnInit {
-  public explorateur = new Explorateur(1, 'Windstorm', 'olivier.brazeau@hotmail.com', 'oli');
-  constructor() { }
+  explorateurs : Explorateur[];
+  constructor(private explorateurService: ExplorateurService) { }
 
   ngOnInit() {
     
   }
   
+  add(name:string, email:string) : void {
+    name = name.trim();
+    email = email.trim();
+    if(!name && !email) {return;}
+    this.explorateurService.addExplorateur({name, email} as Explorateur)
+      .subscribe(explorateur => {
+        this.explorateurs.push(explorateur);
+      });
+  }
+
 }
