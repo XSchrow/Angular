@@ -26,4 +26,11 @@ export class ExplorateursComponent implements OnInit {
       });
   }
 
+  find(username:string, password:string) : void {
+    username = username.trim();
+    password = password.trim();
+    if(!name && !password) {return;}
+    this.explorateurService.findExplorateur({username, password} as Explorateur)
+  }
+
 }

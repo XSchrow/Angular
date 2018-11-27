@@ -1,0 +1,14 @@
+#inscription {
+    float: left;
+    margin-left: 20%;
+    padding: 30px;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+#connexion {
+    float: right;
+    margin-right: 20%;
+    padding: 30px;
+    border: 2px solid grey;
+    border-radius: 5px;
+}

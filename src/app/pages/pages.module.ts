@@ -10,9 +10,8 @@ import { PagesComponent } from './pages.component';
 
 import { PageOverviewComponent } from './overview/overview.component';
 import { PageCrudComponent } from './crud/crud.component';
-import { PageSettingsComponent } from './settings/settings.component';
-import { ConnexionComponent } from './connexion/connexion.component';
 import { ExplorateursComponent } from './explorateurs/explorateurs.component';
+
 
 
 import { LayoutDefaultComponent } from './layouts/default/default.component';
@@ -23,20 +22,20 @@ import { SidebarComponent } from './include/sidebar/sidebar.component';
 import { UsersComponent } from './users/users.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
+import { RunesComponent } from './runes/runes.component'
 
 const COMPONENTS = [
   PagesComponent,
   ExplorateursComponent,
-  ConnexionComponent,
   PageOverviewComponent,
   PageCrudComponent,
-  PageSettingsComponent,
   LayoutDefaultComponent,
   NavbarComponent,
   SidebarComponent,
   UsersComponent,
   ProfileComponent,
   ProfileFormComponent,
+  RunesComponent
 ]
 
 const MODULES = [
