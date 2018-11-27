@@ -7,13 +7,13 @@ import { Rune } from '../../models/rune'
   styleUrls: ['./runes.component.css']
 })
 export class RunesComponent implements OnInit {
-  Rune = [
-
-  ]
   
   constructor() { }
 
   ngOnInit() {
   }
-
+  public runes: any = [
+    { type: 'air', quantity:0 },
+    { type: 'darkness', darkness:0 },
+  ]
 }

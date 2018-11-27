@@ -4,16 +4,10 @@
     </div>
     <div *ngIf="content.children.length == 0">
       <div class="card p-3">
-          <tr>
-            <td></td>
-            <td>Logic</td>
-            <td>0</td> 
-          </tr>
-          <tr>
-            <td></td>
-            <td>Fire</td>
-            <td>0</td> 
-          </tr>
+        <li *ngFor="let rune of runes">
+          <td><img id="imgRune" src="../../../assets/img/runes/air.png"/></td>
+          <td>{{ rune.type }}</td>
+        </li>
       </div>
     </div>
   </div>

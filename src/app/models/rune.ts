@@ -1,7 +1,7 @@
-export interface Rune {
+export class Rune {
     constructor(
-        id: number,
-        name:string,
-        number:string
-    ) 
+        public air:number,
+        public darkness:number,
+        public earth:number
+    ) {}
 }
