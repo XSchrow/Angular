@@ -175,14 +175,13 @@ export class UsersComponent implements AfterViewInit {
       cellClass: 'align-middle text-nowrap'
     },
     {
-      prop: 'date',
-      label: 'Date',
+      prop: 'life',
+      label: 'Life',
       cellClass: 'align-middle text-nowrap',
-      sortable: true
     },
     {
-      prop: 'status',
-      label: ' ',
+      prop: 'speed',
+      label: 'Speed',
       cellClass: 'text-center align-middle'
     },
     {
