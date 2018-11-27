@@ -12,8 +12,9 @@ export class RunesComponent implements OnInit {
 
   ngOnInit() {
   }
-  public runes: any = [
-    { type: 'air', quantity:0 },
-    { type: 'darkness', darkness:0 },
-  ]
+  public runes: any = new Rune(0,0,0,0,0,0,0,0,0,0,0,0);
+
+  public get runesArray() {
+    return Object.entries(this.runes);
+  }
 }

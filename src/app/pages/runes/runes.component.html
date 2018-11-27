@@ -1,13 +1,13 @@
-<div class="col-1 col-lg-auto mb-3" style="width: 200px">
+<div class="col-1 col-lg-auto mb-3" style="width: 150px">
     <div #content>
       <ng-content></ng-content>
     </div>
     <div *ngIf="content.children.length == 0">
       <div class="card p-3">
-        <li *ngFor="let rune of runes">
-          <td><img id="imgRune" src="../../../assets/img/runes/air.png"/></td>
-          <td>{{ rune.type }}</td>
-        </li>
+        <tr *ngFor="let rune of runesArray">
+          <td><img id="imgRune" src="../../../assets/img/runes/{{ rune[0] }}.png"/></td>
+          <td>{{ rune[1] }}</td>
+        </tr>
       </div>
     </div>
   </div>

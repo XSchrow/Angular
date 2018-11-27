@@ -49,62 +49,14 @@
               <button
                 class="btn btn-sm btn-outline-secondary badge"
                 type="button"
-                (click)="userToShow = row; openModal(editUserModal)">D/tail</button>
+                (click)="userToShow = row; openModal(editUserModal)">Détail</button>
             </div>
           </ng-template>
         </e-table>
       </div>
     </e-panel>
   </div>
-  <div class="col-12 col-lg-3 mb-3">
-    <div class="card">
-      <div class="card-body">
-        <div class="text-center px-xl-3">
-          <button
-            class="btn btn-success btn-block"
-            type="button"
-            (click)="openModal(newUserModal)">New User</button>
-        </div>
-        <hr class="my-3">
-        <e-navlist [activeBold]="true">
-          <ul class="nav">
-            <li class="nav-item" [class.active]="tab == 'all'">
-              <a href=""
-                class="nav-link px-3 text-nowrap"
-                (click)="$event.preventDefault(); tab = 'all'">
-                <span>All</span>
-                <small>/ {{ tabs.all.length }}</small>
-              </a>
-            </li>
-            <li class="nav-item" [class.active]="tab == 'active'">
-              <a href=""
-                class="nav-link px-3 text-nowrap"
-                (click)="$event.preventDefault(); tab = 'active'">
-                <span>Active</span>
-                <small>/ {{ tabs.active.length }}</small>
-              </a>
-            </li>
-            <li class="nav-item" [class.active]="tab == 'selected'">
-              <a href=""
-                class="nav-link px-3 text-nowrap"
-                (click)="$event.preventDefault(); tab = 'selected'">
-                <span>Selected</span>
-                <small>/ {{ tabs.selected.length }}</small>
-              </a>
-            </li>
-          </ul>
-        </e-navlist>
-        <hr class="my-3">
-        <div class="">
-          <div class="form-group">
-            <label>Date from - to:</label>
-            <div class="">
-              <e-datepicker-range
-                [value]="filters.date"
-                (onChange)="filters.date = $event"
-                [placeholder]="(minMaxDates[0] * 1000 | date: 'dd LLL yy') + ' - ' + (minMaxDates[1] * 1000 | date: 'dd LLL yy')"></e-datepicker-range>
-            </div>
-          </div>
+  
           <div class="form-group">
             <label>Search by Name:</label>
             <div>
@@ -115,74 +67,4 @@
                 placeholder="Name">
             </div>
           </div>
-        </div>
-        <hr class="my-3">
-        <div class="">
-          <label>Status:</label>
-          <div class="px-2">
-            <div class="custom-control custom-radio">
-              <input
-                type="radio"
-                class="custom-control-input"
-                name="user-status"
-                [value]="false"
-                [(ngModel)]="filters.status"
-                id="users-status-disabled">
-              <label class="custom-control-label" for="users-status-disabled">Disabled</label>
-            </div>
-          </div>
-          <div class="px-2">
-            <div class="custom-control custom-radio">
-              <input
-                type="radio"
-                class="custom-control-input"
-                name="user-status"
-                [value]="true"
-                [(ngModel)]="filters.status"
-                id="users-status-active">
-              <label class="custom-control-label" for="users-status-active">Active</label>
-            </div>
-          </div>
-          <div class="px-2">
-            <div class="custom-control custom-radio">
-              <input
-                type="radio"
-                class="custom-control-input"
-                name="user-status"
-                [value]="null"
-                [(ngModel)]="filters.status"
-                id="users-status-any">
-              <label class="custom-control-label" for="users-status-any">Any</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<ng-template #newUserModal let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title">New User</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div class="pb-1">
-      <app-profile-form [isNew]="true"></app-profile-form>
-    </div>
-  </div>
-</ng-template>
-<ng-template #editUserModal let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title">Edit User</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div class="py-1">
-      <app-profile [user]="userToShow"></app-profile>
-    </div>
-  </div>
-</ng-template>
+
