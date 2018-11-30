@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Rune } from '../../models/rune'
+import { Observable } from 'rxjs';
+import { RuneService } from '../../services/rune/rune.service'
+
 
 @Component({
   selector: 'app-runes',
@@ -7,14 +10,22 @@ import { Rune } from '../../models/rune'
   styleUrls: ['./runes.component.css']
 })
 export class RunesComponent implements OnInit {
-  
-  constructor() { }
+  constructor(private runeService: RuneService) { 
+    
+    this.getRunes(localStorage.Authorization);
+  }
 
   ngOnInit() {
   }
-  public runes: any = new Rune(0,0,0,0,0,0,0,0,0,0,0,0);
+  public runes: any = Rune;
 
   public get runesArray() {
     return Object.entries(this.runes);
   }
+
+  public getRunes(token: string): Observable<Rune> {
+    return this.runeService.getRunesByExplorateur(token)
+  }
+
+
 }

@@ -12,5 +12,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  public deconnexion(): void {
+    console.log("ici");
+    localStorage.removeItem(localStorage.key.toString());
+  };
+  
 }

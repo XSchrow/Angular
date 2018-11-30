@@ -21,10 +21,9 @@ export class ExplorateursComponent implements OnInit {
     username = username.trim();
     email = email.trim();
     password = password.trim();
-
     if(!name && !email) {return;}
     this.explorateurService.addExplorateur({username, email, password} as Explorateur)
-      .subscribe(token => localStorage.token = token);
+      .subscribe(token => localStorage.Authorization = "Bearer " + token);
   }
 
   find(username:string, password:string) : void {
@@ -32,7 +31,7 @@ export class ExplorateursComponent implements OnInit {
     password = password.trim();
     if(!name && !password) {return;}
     this.explorateurService.findExplorateur({username, password} as Explorateur)
-    .subscribe(token => localStorage.token = token);
+    .subscribe(token => localStorage.Authorization = "Bearer " + token);
   }
 
 }
