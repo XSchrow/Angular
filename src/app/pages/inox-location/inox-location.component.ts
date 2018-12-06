@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { InoxLocationService } from '../../services/inoxLocation/inox-location.service'
 
 @Component({
@@ -9,16 +8,14 @@ import { InoxLocationService } from '../../services/inoxLocation/inox-location.s
   styleUrls: ['./inox-location.component.css']
 })
 export class InoxLocationComponent implements OnInit {
+  //public data: {location: string, inox: number};
+  public observable: Observable<{location: string, inox: number}>;
 
-  constructor(private inoxLocationService: InoxLocationService) { 
-   /* console.log(this.Inox = this.getInox(localStorage.Authorization));
-    this.Inox = this.getInox(localStorage.Authorization);*/
-  }
+  constructor(private inoxLocationService: InoxLocationService) { }
 
   ngOnInit() {
-  }
-  public Inox: number;
-  public getInox(token: string) {
-    return this.inoxLocationService.getInox(token).subscribe(Inox => this.Inox = 2);
+    this.observable = this.inoxLocationService.get(localStorage.Authorization)
+    /*this.inoxLocationService.get(localStorage.Authorization)
+      .subscribe(value => this.data = value);*/
   }
 }

@@ -1,8 +1,10 @@
-<div *ngIf="inox$ | async; let inox">
-
-  
-  <p>
-    {{inox.value}} salut
-  </p>
-  
+<!--
+  <div *ngIf="data">
+    <p>{{data.inox}}</p>
+    <p>{{data.location}}</p>
+  </div>
+-->
+<div class="card p-3" *ngIf="observable | async as obsdata">
+  <p>Vos inox : {{obsdata.inox}}</p>
+  <p>Votre location : {{obsdata.location}}</p>
 </div>

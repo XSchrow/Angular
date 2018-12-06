@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
   public deconnexion(): void {
-    localStorage.clear();
+    localStorage.removeItem("Authorization");
   };
   
 }

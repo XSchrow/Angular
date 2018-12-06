@@ -4,10 +4,62 @@
     </div>
     <div *ngIf="content.children.length == 0">
       <div class="card p-3">
+        <!--
         <tr *ngFor="let rune of runesArray">
           <td><img id="imgRune" src="../../../assets/img/runes/{{ rune[0] }}.png"/></td>
           <td>{{ rune[1] }}</td>
         </tr>
+        -->
+        <div *ngIf="rune | async as rune">
+          <tr>
+            <td><img id="imgRune" src="../../../assets/img/runes/air.png"/></td>
+            <td>{{ rune.air }}</td>
+          </tr>
+          <tr>
+            <td><img id="imgRune" src="../../../assets/img/runes/darkness.png"/></td>
+            <td>{{ rune.darkness }}</td>
+          </tr>
+          <tr>
+            <td><img id="imgRune" src="../../../assets/img/runes/earth.png"/></td>
+            <td>{{ rune.earth }}</td>
+          </tr>
+          <tr>
+              <td><img id="imgRune" src="../../../assets/img/runes/energy.png"/></td>
+              <td>{{ rune.energy }}</td>
+          </tr>
+          <tr>
+              <td><img id="imgRune" src="../../../assets/img/runes/fire.png"/></td>
+              <td>{{ rune.fire }}</td>
+          </tr>
+          <tr>
+              <td><img id="imgRune" src="../../../assets/img/runes/life.png"/></td>
+              <td>{{ rune.life }}</td>
+          </tr>
+          <tr>
+              <td><img id="imgRune" src="../../../assets/img/runes/light.png"/></td>
+              <td>{{ rune.light }}</td>
+          </tr>
+          <tr>
+              <td><img id="imgRune" src="../../../assets/img/runes/logic.png"/></td>
+              <td>{{ rune.logic }}</td>
+          </tr>
+          <tr>
+              <td><img id="imgRune" src="../../../assets/img/runes/music.png"/></td>
+              <td>{{ rune.music }}</td>
+          </tr>
+          <tr>
+              <td><img id="imgRune" src="../../../assets/img/runes/space.png"/></td>
+              <td>{{ rune.space }}</td>
+          </tr>
+          <tr>
+              <td><img id="imgRune" src="../../../assets/img/runes/toxic.png"/></td>
+              <td>{{ rune.toxic }}</td>
+          </tr>
+          <tr>
+              <td><img id="imgRune" src="../../../assets/img/runes/water.png"/></td>
+              <td>{{ rune.water }}</td>
+          </tr>
+        </div>
       </div>
     </div>
   </div>
