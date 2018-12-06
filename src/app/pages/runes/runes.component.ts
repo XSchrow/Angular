@@ -11,13 +11,13 @@ import { RuneService } from '../../services/rune/rune.service'
 })
 export class RunesComponent implements OnInit {
   constructor(private runeService: RuneService) { 
-    console.log(this.getRunes(localStorage.Authorization));
-    this.runes = this.getRunes(localStorage.Authorization);
+    /**console.log(this.getRunes(localStorage.Authorization));
+    this.runes = this.getRunes(localStorage.Authorization);*/
   }
 
   ngOnInit() {
   }
-  public runes: any;
+  public runes: any = new Rune(0,0,0,0,0,0,0,0,0,0,0,0);
 
   public get runesArray() {
     return Object.entries(this.runes);

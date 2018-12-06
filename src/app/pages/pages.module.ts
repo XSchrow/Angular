@@ -22,7 +22,8 @@ import { SidebarComponent } from './include/sidebar/sidebar.component';
 import { UsersComponent } from './users/users.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
-import { RunesComponent } from './runes/runes.component'
+import { InoxLocationComponent } from './inox-location/inox-location.component';
+import { RunesComponent } from './runes/runes.component';
 
 const COMPONENTS = [
   PagesComponent,
@@ -35,7 +36,8 @@ const COMPONENTS = [
   UsersComponent,
   ProfileComponent,
   ProfileFormComponent,
-  RunesComponent
+  RunesComponent,
+  InoxLocationComponent
 ]
 
 const MODULES = [
