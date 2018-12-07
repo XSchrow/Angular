@@ -4,7 +4,13 @@
     <p>{{data.location}}</p>
   </div>
 -->
-<div class="card p-3" *ngIf="observable | async as obsdata">
-  <p>Vos inox : {{obsdata.inox}}</p>
-  <p>Votre location : {{obsdata.location}}</p>
+<div collapse>
+    <ul *ngIf="observable | async as obsdata" class="navbar-nav pt-3 pt-md-0">
+        <li class="nav-item">
+          <p>Vos inox : {{obsdata.inox}}</p>
+        </li>
+        <li class="nav-item">
+            <p>Votre location : {{obsdata.location}}</p>
+        </li>
+    </ul>     
 </div>

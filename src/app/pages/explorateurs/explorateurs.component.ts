@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Explorateur } from '../../models/explorateur'
 import { ExplorateurService } from '../../services/explorateur/explorateur.service'
+import { ErrorService } from '../../services/ErrorHttp/error.service'
+import { catchError } from 'rxjs/operators';
+import { error } from 'util';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class ExplorateursComponent implements OnInit {
     password = password.trim();
     if(!name && !email) {return;}
     this.explorateurService.addExplorateur({username, email, password} as Explorateur)
-      .subscribe(token => localStorage.Authorization = "Bearer " + token);
+      .subscribe(token => localStorage.Authorization = "Bearer " + token)
   }
 
   find(username:string, password:string) : void {
