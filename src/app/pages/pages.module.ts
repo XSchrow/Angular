@@ -9,7 +9,7 @@ import { TableExamplesModule } from '../../elements/components/table/examples/mo
 import { PagesComponent } from './pages.component';
 
 import { PageOverviewComponent } from './overview/overview.component';
-import { PageCrudComponent } from './crud/crud.component';
+import { PageUnitComponent } from './units/units.component';
 import { ExplorateursComponent } from './explorateurs/explorateurs.component';
 
 
@@ -29,7 +29,7 @@ const COMPONENTS = [
   PagesComponent,
   ExplorateursComponent,
   PageOverviewComponent,
-  PageCrudComponent,
+  PageUnitComponent,
   LayoutDefaultComponent,
   NavbarComponent,
   SidebarComponent,

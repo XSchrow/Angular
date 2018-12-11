@@ -7,7 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./units.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class UsersComponent implements AfterViewInit {
+export class PageUnitComponent implements AfterViewInit {
 
   constructor(private modalService: NgbModal) { }
 
@@ -125,43 +125,10 @@ export class UsersComponent implements AfterViewInit {
   public items: any = [
     { id: 1,  name: 'Adam Cotter',        date: 1512792908, status: true,  photo: '' },
     { id: 2,  name: 'Pauline Noble',      date: 1516977768, status: false, photo: '' },
-    { id: 3,  name: 'Sherilyn Metzel',    date: 1517042476, status: true,  photo: '' },
-    { id: 4,  name: 'Terrie Boaler',      date: 1516439865, status: true,  photo: '' },
-    { id: 5,  name: 'Rutter Pude',        date: 1515850922, status: false, photo: '' },
-    { id: 6,  name: 'Clifford Benjamin',  date: 1516898701, status: true,  photo: '' },
-    { id: 7,  name: 'Thedric Romans',     date: 1515707885, status: false, photo: '' },
-    { id: 8,  name: 'Haily Carthew',      date: 1517056707, status: true,  photo: '' },
-    { id: 9,  name: 'Dorothea Joicey',    date: 1513090469, status: true,  photo: '' },
-    { id: 10, name: 'Mikaela Pinel',      date: 1512892304, status: false, photo: '' },
-    { id: 11, name: 'Donnell Farries',    date: 1512299369, status: true,  photo: '' },
-    { id: 12, name: 'Letizia Puncher',    date: 1512769349, status: false, photo: '' },
-    { id: 13, name: 'Kania Yallowley',    date: 1515521487, status: true,  photo: '' },
-    { id: 14, name: 'Clay De Francesco',  date: 1515012234, status: false, photo: '' },
-    { id: 15, name: 'Ina Queree',         date: 1514458367, status: false, photo: '' },
-    { id: 16, name: 'Rasia Awty',         date: 1516943842, status: false, photo: '' },
-    { id: 17, name: 'Basil Crosham',      date: 1512108299, status: true,  photo: '' },
-    { id: 18, name: 'Alexis Dodworth',    date: 1516814115, status: false, photo: '' },
-    { id: 19, name: 'Greg Onyon',         date: 1517071308, status: true,  photo: '' },
-    { id: 20, name: 'Barry Carbett',      date: 1515450742, status: true,  photo: '' },
-    { id: 21, name: 'Carlyle Adran',      date: 1512498261, status: true,  photo: '' },
-    { id: 22, name: 'Guillaume Petel',    date: 1512742913, status: false, photo: '' },
-    { id: 23, name: 'Wendeline Glasner',  date: 1513319267, status: false, photo: '' },
-    { id: 24, name: 'Sylvia Petrollo',    date: 1516080489, status: false, photo: '' },
-    { id: 25, name: 'Meade Quoit',        date: 1513972299, status: true,  photo: '' },
-    { id: 26, name: 'Eugine Planke',      date: 1515488407, status: false, photo: '' },
-    { id: 27, name: 'Thoma Drakeley',     date: 1515023660, status: false, photo: '' },
-    { id: 28, name: 'Web Margetson',      date: 1513557231, status: true,  photo: '' },
-    { id: 29, name: 'Erskine Stivens',    date: 1515233788, status: true,  photo: '' },
-    { id: 30, name: 'Jedidiah Emmer',     date: 1512614842, status: false, photo: '' },
-    { id: 31, name: 'Wolfie Drakers',     date: 1512381522, status: false, photo: '' },
-    { id: 32, name: 'Allie Quiney',       date: 1515488202, status: true,  photo: '' }
+
   ]
 
   public columns = [
-    {
-      prop: 'check',
-      cellClass: 'text-center align-middle'
-    },
     {
       prop: 'photo',
       label: 'Photo',
