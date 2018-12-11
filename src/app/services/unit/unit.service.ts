@@ -8,7 +8,7 @@ import { Unit } from '../../models/unit';
   providedIn: 'root'
 })
 export class UnitService {
-  private unitsUrl = 'https://server-andromia-scipy900.c9users.io/units/test/tacos';
+  private unitsUrl = 'https://server-andromia-scipy900.c9users.io/units';
   constructor(private http: HttpClient) { }
 
   getAllUnit(token:string): Observable<Unit[]> {

@@ -1,116 +1,40 @@
-
-<div>
-  <table>
-    <tr>
-      <th>Photo</th>
-      <th>name</th>
-      <th>Life</th>
-      <th>Speed</th>
-      <th>Actions</th>
-    </tr>
-    <tr *ngFor="let unit of units | async">
-      <td><img src="{{ unit.imageURL }}"></td>
-      <td>{{ unit.name }}</td>
-      <td>{{ unit.life }}</td> 
-      <td>{{ unit.speed }}</td>
-      <td>{{ unit.speed }}</td>
-    </tr>
-  </table>
-</div>
 <layout-default>
-  <div class="mb-3 px-3">
-          <div class="form-group">
-            <label>Search by Name:</label>
-            <div>
-              <input
-                class="form-control w-100"
-                type="text"
-                [(ngModel)]="filters.name"
-                placeholder="Name">
-            </div>
-          </div>
+  <div class="mb-8">
+          
           <div class="row flex-lg-nowrap">
-            <div class="col mb-3">
-              <e-panel [title]="'Vos Units'" [subtitle]="'Andromia'">
-                <div class="mt-3">
-                  <e-table
-                    [items]="tabs[tab]"
-                    [columns]="columns"
-                    [pagination]="true"
-                    [page]="page"
-                    [limit]="perPage"
-                    [tableClass]="'table table-bordered table-lg'"
-                    [paginationClass]="'pagination pagination-sm pagination-separated justify-content-center mb-0'"
-                    [responsive]="true">
-                    <ng-template head-template prop="check">
-                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0">
-                        <input
-                          type="checkbox"
-                          class="custom-control-input"
-                          name="all-items"
-                          id="all-items"
-                          [checked]="tabs.selected.length === tabs.all.length"
-                          (change)="selectAll($event.target.checked)" />
-                        <label class="custom-control-label" [for]="'all-items'"></label>
-                      </div>
-                    </ng-template>
-                    <ng-template cell-template let-row="row" let-index="index" prop="check">
-                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0">
-                        <input
-                          type="checkbox"
-                          class="custom-control-input"
-                          [id]="'item-' + index"
-                          [(ngModel)]="row.selected" />
-                        <label class="custom-control-label" [for]="'item-' + index"></label>
-                      </div>
-                    </ng-template>
-                    <ng-template cell-template let-row  prop="photo">
-                      <div class="bg-light justify-content-center align-items-center" style="width: 35px; height: 35px; border-radius: 3px; display: inline-flex; vertical-align: top;">
-                        <i class="fa fa-fw fa-photo" style="opacity: .8"></i>
-                      </div>
-                    </ng-template>
-                    <ng-template cell-template let-row prop="date">{{ row.date * 1000 | date: 'mediumDate' }}</ng-template>
-                    <ng-template cell-template let-row prop="status">
-                      <i
-                        [ngClass]="{ 'fa fa-fw text-secondary cursor-pointer': true, 'fa-toggle-on': row.status, 'fa-toggle-off': !row.status }"
-                        (click)="toggleStatus(row)"></i>
-                    </ng-template>
-                    <ng-template cell-template let-row prop="action">
-                      <div class="btn-group align-top">
-                        <button
-                          class="btn btn-sm btn-outline-secondary badge"
-                          type="button"
-                          (click)="userToShow = row; openModal(editUserModal)">Détail</button>
-                      </div>
-                    </ng-template>
-                  </e-table>
-                </div>
-              </e-panel>
+            <div class="col mb-8">
+              
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>Photo</th>
+                        <th>Name</th>
+                        <th>Life</th>
+                        <th>Speed</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let unit of units | async">
+                        <td><img id="imgUnit" src="{{ unit.imageURL }}"></td>
+                        <td>{{ unit.name }}</td>
+                        <td>{{ unit.life }}</td> 
+                        <td>{{ unit.speed }}</td>
+                        <td>
+                            <button
+                              class="btn btn-sm btn-outline-secondary badge"
+                              type="button"
+                              (click)="openModal(unit, editUnitModal)">Détail</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                  </table>
             </div>
           </div>
-          <ng-template #newUserModal let-c="close" let-d="dismiss">
-            <div class="modal-header">
-              <h4 class="modal-title">New User</h4>
-              <button type="button" class="close" aria-label="Close" (click)="d()">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="pb-1">
-                <app-profile-form [isNew]="true"></app-profile-form>
-              </div>
-            </div>
-          </ng-template>
-          <ng-template #editUserModal let-c="close" let-d="dismiss">
-            <div class="modal-header">
-              <h4 class="modal-title">Edit User</h4>
-              <button type="button" class="close" aria-label="Close" (click)="d()">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
+          <ng-template #editUnitModal let-c="close" let-d="dismiss">
             <div class="modal-body">
               <div class="py-1">
-                <app-profile [user]="userToShow"></app-profile>
+                <app-profile [unit]="unitToShow"></app-profile>
               </div>
             </div>
           </ng-template>

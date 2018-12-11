@@ -19,9 +19,7 @@ import { LayoutDefaultComponent } from './layouts/default/default.component';
 import { NavbarComponent } from './include/navbar/navbar.component';
 import { SidebarComponent } from './include/sidebar/sidebar.component';
 
-import { UsersComponent } from './users/users.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ProfileFormComponent } from './profile-form/profile-form.component';
 import { InoxLocationComponent } from './inox-location/inox-location.component';
 import { RunesComponent } from './runes/runes.component';
 
@@ -33,9 +31,7 @@ const COMPONENTS = [
   LayoutDefaultComponent,
   NavbarComponent,
   SidebarComponent,
-  UsersComponent,
   ProfileComponent,
-  ProfileFormComponent,
   RunesComponent,
   InoxLocationComponent
 ]

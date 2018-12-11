@@ -10,8 +10,10 @@ export class ProfileComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    console.log(this.unit);
+  }
 
-  @Input() user;
+  @Input() unit;
 
 }
