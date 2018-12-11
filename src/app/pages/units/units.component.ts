@@ -1,5 +1,8 @@
 import { Component, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { Unit } from '../../models/unit'
+import { Observable } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { UnitService } from '../../services/unit/unit.service'
 
 @Component({
   selector: 'app-units',
@@ -9,9 +12,11 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class PageUnitComponent implements AfterViewInit {
 
-  constructor(private modalService: NgbModal) { }
+  public units: Observable<Unit[]>
+  constructor(private modalService: NgbModal, private unitService: UnitService) { }
 
   ngAfterViewInit() {
+    this.units = this.unitService.getAllUnit(localStorage.Authorization);
     const parent = (window.parent as any);
     if (parent.setDemoFrameHeight) {
       parent.setDemoFrameHeight();
@@ -123,8 +128,7 @@ export class PageUnitComponent implements AfterViewInit {
   }
 
   public items: any = [
-    { id: 1,  name: 'Adam Cotter',        date: 1512792908, status: true,  photo: '' },
-    { id: 2,  name: 'Pauline Noble',      date: 1516977768, status: false, photo: '' },
+    { id: 1,  name: '',        date: 1512792908, status: true,  photo: '' },
 
   ]
 

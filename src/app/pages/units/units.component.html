@@ -1,4 +1,22 @@
 
+<div>
+  <table>
+    <tr>
+      <th>Photo</th>
+      <th>name</th>
+      <th>Life</th>
+      <th>Speed</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let unit of units | async">
+      <td><img src="{{ unit.imageURL }}"></td>
+      <td>{{ unit.name }}</td>
+      <td>{{ unit.life }}</td> 
+      <td>{{ unit.speed }}</td>
+      <td>{{ unit.speed }}</td>
+    </tr>
+  </table>
+</div>
 <layout-default>
   <div class="mb-3 px-3">
           <div class="form-group">
