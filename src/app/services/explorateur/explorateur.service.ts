@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Explorateur } from '../../models/explorateur';
-
+import { ErrorService } from '../../services/errorHttp/error.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class ExplorateurService {
   };
 
   private explorateursUrl = 'https://server-andromia-scipy900.c9users.io/accounts'
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient , private errorService : ErrorService) { }
   
   addExplorateur (explorateur: Explorateur): Observable<string> {
     const url = `${this.explorateursUrl}/inscription`;

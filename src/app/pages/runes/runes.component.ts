@@ -10,24 +10,16 @@ import { RuneService } from '../../services/rune/rune.service'
   styleUrls: ['./runes.component.css']
 })
 export class RunesComponent implements OnInit {
+  // Variable pour contenir un observable des runes
   public rune: Observable<Rune>
   constructor(private runeService: RuneService) { 
-    /**console.log(this.getRunes(localStorage.Authorization));
-    this.runes = this.getRunes(localStorage.Authorization);*/
   }
 
   ngOnInit() {
+
+    // Récupérer les runes en appelant une fonction get de mon service de runes
     this.rune = this.runeService.getRunesByExplorateur(localStorage.Authorization);
   }
-  //public runes: any = new Rune(0,0,0,0,0,0,0,0,0,0,0,0);
-
-  /*public get runesArray() {
-    return Object.entries(this.rune);
-  }*/
-
-  /*public getRunes(token: string): Observable<Rune> {
-    return this.runeService.getRunesByExplorateur(token)
-  }*/
 
 
 }

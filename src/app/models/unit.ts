@@ -10,7 +10,8 @@ export class Unit {
         public number:number,
         public uuid:string,
         public kernel: Rune,
-        public rune: WeaponAbility,
+        public runes: WeaponAbility,
+        public captureDate:Date,
         public createdDate:Date
     ) { }
 }

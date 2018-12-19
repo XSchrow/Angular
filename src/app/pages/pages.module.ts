@@ -11,7 +11,7 @@ import { PagesComponent } from './pages.component';
 import { PageOverviewComponent } from './overview/overview.component';
 import { PageUnitComponent } from './units/units.component';
 import { ExplorateursComponent } from './explorateurs/explorateurs.component';
-
+import { InscriptionFormComponent } from './inscription-form/inscription-form.component';
 
 
 import { LayoutDefaultComponent } from './layouts/default/default.component';
@@ -27,6 +27,7 @@ const COMPONENTS = [
   PagesComponent,
   ExplorateursComponent,
   PageOverviewComponent,
+  InscriptionFormComponent,
   PageUnitComponent,
   LayoutDefaultComponent,
   NavbarComponent,

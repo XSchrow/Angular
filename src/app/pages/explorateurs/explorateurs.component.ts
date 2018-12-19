@@ -18,14 +18,7 @@ export class ExplorateursComponent implements OnInit {
     
   }
   
-  add(username: string, email: string, password: string) : void {
-    username = username.trim();
-    email = email.trim();
-    password = password.trim();
-    if(!name && !email) {return;}
-    this.explorateurService.addExplorateur({username, email, password} as Explorateur)
-      .subscribe(token => localStorage.Authorization = "Bearer " + token)
-  }
+  
 
   find(username:string, password:string) : void {
     username = username.trim();

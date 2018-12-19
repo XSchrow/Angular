@@ -5,12 +5,12 @@
   </div>
 -->
 <div collapse>
-    <ul *ngIf="observable | async as obsdata" class="navbar-nav pt-3 pt-md-0">
+    <ul *ngIf="observable | async as obsdata" class="navbar-nav pt-3 pt-md-0 mb-10">
         <li class="nav-item">
-          <p>Vos inox : {{obsdata.inox}}</p>
+          <p>{{obsdata.inox}}<img src="../../../assets/img/inox.png"/></p>
         </li>
         <li class="nav-item">
-            <p>Votre location : {{obsdata.location}}</p>
+            <p>{{obsdata.location}} <img src="../../../assets/img/location.png"/></p>
         </li>
     </ul>     
 </div>

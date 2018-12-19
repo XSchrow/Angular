@@ -1,7 +1,8 @@
 
 export class WeaponAbility {
     constructor(
-        weapons:[{ name:string }],
-        abilities:[{name:string}]
+        public abilities:[{ type:string}],
+        public weapons:[{ type:string }]
+
     ) { }
 }
