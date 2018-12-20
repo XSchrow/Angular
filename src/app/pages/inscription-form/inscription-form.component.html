@@ -1,29 +1,51 @@
-<h2>Register</h2>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Username is required</div>
-            <div *ngIf="f.username.errors.minlength">Username must be at least 2 characters</div>
-        </div>
+<h1>Inscription</h1>
+  <form  (ngSubmit)="onSubmit()">
+    <div class="form-group ">
+      <label for="username">Username:</label>
+        <input #InscriptionUsername type="text" class="form-control" id="username" placeholder="Username" required minlength="2" maxlength="15"
+        [(ngModel)]="model.username" name="username"
+        #username="ngModel">
+          <div *ngIf="username.invalid && submitted"
+            class="alert alert-danger">
+            <div *ngIf="username.errors.required">
+              Name is required.
+            </div>  
+            <div *ngIf="username.errors.minlength">
+              Username must be at least 2 characters long.
+            </div>
+          </div>
+    </div>
+    <div class="form-group" >
+      <label>Email:</label>
+        <input #InscriptionEmail class="form-control" type="email" id="email" placeholder="name@example.com" ngModel email required 
+        [(ngModel)]="model.email" name="email"
+        #email="ngModel">
+          <div *ngIf="email.invalid && submitted"
+            class="alert alert-danger">
+            <div *ngIf="email.errors.required">
+              email is required.
+            </div>  
+            <div *ngIf="email.errors.email">
+              Need to be an good adresse.
+            </div>
+          </div>
     </div>
     <div class="form-group">
-      <label for="email">Email</label>
-      <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-          <div *ngIf="f.email.errors.required">Email is required</div>
+      <label>Password:</label>
+        <input #InscriptionPassword class="form-control" type="password" placeholder="Password"  ngModel pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required 
+        [(ngModel)]="model.password" name="password"
+        #password="ngModel">  
+          <div *ngIf="password.invalid && submitted"
+            class="alert alert-danger">
+            <div *ngIf="password.errors.required">
+              Password is required.
+            </div>  
+            <div *ngIf="password.errors.pattern">
+                    Minimum eight characters, at least one uppercase letter, one lowercase letter and one number
+            </div>
+          </div>
       </div>
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
-            
-        </div>
-    </div>
-    <div class="form-group">
-        <button lass="btn btn-primary">Inscription</button>
-    </div>
-</form>
+      <button type="submit" class="btn btn-success" (click)="add(InscriptionUsername.value, InscriptionEmail.value, InscriptionPassword.value);">
+        Inscription
+      </button>
+  </form>

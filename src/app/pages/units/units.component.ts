@@ -34,8 +34,4 @@ export class PageUnitComponent implements AfterViewInit {
       this.modalService.open(modal, { size: size });
     }
   }
-
-
-
-//https://stackblitz.com/edit/angular-6-registration-login-example?file=app%2F_services%2Fauthentication.service.ts
 }

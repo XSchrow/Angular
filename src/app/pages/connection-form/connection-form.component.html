@@ -1,0 +1,18 @@
+<h1>Connection</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="alert alert-danger" *ngIf="errorMsg">
+      {{errorMsg}}
+    </div>
+    <div class="form-group">
+      <label>Username:</label>
+        <input #ConnexionUsername class="form-control" type="text" placeholder="Username"/>
+      
+    </div>
+    <div class="form-group">
+      <label>Password:</label>
+        <input #ConnexionPassword class="form-control" type="password" placeholder="Password"/>
+    </div>
+    <button class="btn btn-primary" (click)="find(ConnexionUsername.value, ConnexionPassword.value);">
+        Connection
+    </button>
+  </form>

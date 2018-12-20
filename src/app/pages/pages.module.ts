@@ -12,14 +12,14 @@ import { PageOverviewComponent } from './overview/overview.component';
 import { PageUnitComponent } from './units/units.component';
 import { ExplorateursComponent } from './explorateurs/explorateurs.component';
 import { InscriptionFormComponent } from './inscription-form/inscription-form.component';
-
+import { ConnectionFormComponent } from './connection-form/connection-form.component';
 
 import { LayoutDefaultComponent } from './layouts/default/default.component';
 
 import { NavbarComponent } from './include/navbar/navbar.component';
 import { SidebarComponent } from './include/sidebar/sidebar.component';
 
-import { ProfileComponent } from './profile/profile.component';
+import { DetailUnitComponent } from './detailUnit/detailUnit.component';
 import { InoxLocationComponent } from './inox-location/inox-location.component';
 import { RunesComponent } from './runes/runes.component';
 
@@ -28,11 +28,12 @@ const COMPONENTS = [
   ExplorateursComponent,
   PageOverviewComponent,
   InscriptionFormComponent,
+  ConnectionFormComponent,
   PageUnitComponent,
   LayoutDefaultComponent,
   NavbarComponent,
   SidebarComponent,
-  ProfileComponent,
+  DetailUnitComponent,
   RunesComponent,
   InoxLocationComponent
 ]

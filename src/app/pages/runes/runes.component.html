@@ -1,4 +1,4 @@
-<div class="col-1 col-lg-auto mb-3" style="width: 150px">
+<div class="col-1 col-lg-auto mb-1" style="width: 125px">
     <div #content>
       <ng-content></ng-content>
     </div>
@@ -10,6 +10,7 @@
           <td>{{ rune[1] }}</td>
         </tr>
         -->
+        <h5>Runes</h5>
         <div *ngIf="rune | async as rune">
           <tr>
             <td><img id="imgRune" src="../../../assets/img/runes/air.png"/></td>
